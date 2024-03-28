@@ -1,15 +1,43 @@
 package com.nnk.springboot.domain;
 
-import org.hibernate.validator.constraints.Length;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 
 @Entity
-@Table(name = "curvepoint")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Table(name = "curve_point")
 public class CurvePoint {
-    // TODO: Map columns in data table CURVEPOINT with corresponding java fields
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "curve_id")
+    private Integer curveId;
+
+    @Column(name = "as_of_date")
+    private Timestamp asOfDate;
+
+    @NotNull(message = "Term is mandatory")
+    @PositiveOrZero(message = "Term should be a positive.")
+    private Double term;
+
+    @NotNull(message = "Value is mandatory")
+    @PositiveOrZero(message = "Value should be a positive.")
+    private Double value;
+
+    @Column(name = "creation_date")
+    private Timestamp creationDate;
+
 }
