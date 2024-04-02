@@ -35,6 +35,7 @@ public class RatingController {
         return "rating/add";
     }
 
+    @PostMapping("/rating/validate")
     public String validate(@Valid Rating rating, BindingResult result) {
         if(result.hasErrors())
             return "rating/add";
