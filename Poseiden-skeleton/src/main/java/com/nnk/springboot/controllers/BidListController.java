@@ -35,7 +35,8 @@ public class BidListController {
         return "bidList/add";
     }
 
-    public String validate(@Valid  BidList bid, BindingResult result) {
+    @PostMapping("/bidList/validate")
+    public String validate(@Valid BidList bid, BindingResult result) {
         if(result.hasErrors()){
             return "bidList/add";
         }
