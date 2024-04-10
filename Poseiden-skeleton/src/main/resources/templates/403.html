@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-      <title>Spring Boot</title>
+    <title>Application Error</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; color: #333; text-align: center; padding-top: 50px; }
+        h1 { color: #d9534f; }
+        .error-message { margin-top: 20px; }
+        form { margin-top: 20px; }
+    </style>
 </head>
 <body>
-   <h3>Access Denied Exception</h3>
-   <div>
-        Logged in user: <b th:text="${user}" class="user"></b>
-	    <form th:action="@{/app-logout}" method="POST">
-	         <input type="submit" value="Logout"/>
-	    </form>
-   </div> 	 
-    <p class="error" th:text="${errorMsg}">Error</p>
+<h1>Oops! Something went wrong.</h1>
+<div class="error-message">
+    <p>We're sorry, but you don't have access to this area. If you think this is a mistake, please contact support.</p>
+</div>
+<a href="/" style="text-decoration:none;color:#d9534f;">Return Home</a>
 </body>
-</html>   
+</html>
