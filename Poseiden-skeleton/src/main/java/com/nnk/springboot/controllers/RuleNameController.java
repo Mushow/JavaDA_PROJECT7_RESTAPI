@@ -46,10 +46,10 @@ public class RuleNameController {
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         Optional<RuleName> ruleName = ruleNameService.findById(id);
         if (ruleName.isPresent()) {
-            model.addAttribute("rating", ruleName.get());
-            return "rating/update";
+            model.addAttribute("ruleName", ruleName.get());
+            return "ruleName/update";
         } else {
-            return "redirect:/rating/list?error=true";
+            return "redirect:/ruleName/list?error=true";
         }
     }
 
