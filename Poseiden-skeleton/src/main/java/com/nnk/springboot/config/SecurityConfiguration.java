@@ -15,11 +15,22 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfiguration {
 
+
+    /**
+     * This method is used to encode the password.
+     * @return PasswordEncoder
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    /**
+     * This method is used to configure the security filter chain.
+     * @param http
+     * @return
+     * @throws Exception
+     */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -36,6 +47,12 @@ public class SecurityConfiguration {
         return http.build();
     }
 
+    /**
+     * This method is used to get the authentication manager.
+     * @param authenticationConfiguration
+     * @return
+     * @throws Exception
+     */
     @Bean
     public AuthenticationManager authenticationManagerBean(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
