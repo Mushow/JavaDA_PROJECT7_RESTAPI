@@ -17,7 +17,7 @@ import java.util.Optional;
 @AutoConfigureMockMvc(addFilters=false)
 @ActiveProfiles("test")
 @Sql("../../../../scripts/rating.sql")
-public class RatingServiceTest {
+public class RatingServiceIT {
 
     @Autowired
     private RatingService ratingService;

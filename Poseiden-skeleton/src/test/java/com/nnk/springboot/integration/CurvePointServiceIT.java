@@ -17,7 +17,7 @@ import java.util.Optional;
 @AutoConfigureMockMvc(addFilters=false)
 @ActiveProfiles("test")
 @Sql("../../../../scripts/curvepoint.sql")
-public class CurvePointServiceTest {
+public class CurvePointServiceIT {
 
     @Autowired
     private CurvePointService curvePointService;

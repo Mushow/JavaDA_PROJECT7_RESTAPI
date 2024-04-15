@@ -17,7 +17,7 @@ import java.util.Optional;
 @AutoConfigureMockMvc(addFilters=false)
 @ActiveProfiles("test")
 @Sql("../../../../scripts/bidlist.sql")
-public class BidListServiceTest {
+public class BidListServiceIT {
 
     @Autowired
     private BidListService bidListService;

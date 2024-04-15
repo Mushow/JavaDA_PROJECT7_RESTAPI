@@ -17,7 +17,7 @@ import java.util.Optional;
 @AutoConfigureMockMvc(addFilters=false)
 @ActiveProfiles("test")
 @Sql("../../../../scripts/rulename.sql")
-public class RuleNameServiceTest {
+public class RuleNameServiceIT {
 
     @Autowired
     private RuleNameService ruleNameService;

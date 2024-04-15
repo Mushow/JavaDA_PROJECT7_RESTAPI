@@ -17,7 +17,7 @@ import java.util.Optional;
 @AutoConfigureMockMvc(addFilters=false)
 @ActiveProfiles("test")
 @Sql("../../../../scripts/trade.sql")
-public class TradeServiceTest {
+public class TradeServiceIT {
     @Autowired
     private TradeService tradeService;
 
